@@ -23,10 +23,16 @@ function App() {
 
   return (
     <div className="App">
-      <h1>React Frontend</h1>
-      <p>Message from Java Backend: {message}</p>
-      <FileUploader />
-      <AudioHelper />
+      <h1>Welcome to Hintify</h1>
+      <p>Meeting Assistant: {message}</p>
+      <div className='hintify-content-flyout'>
+        <div className='hintify-content-display'>
+          <div className='hintify-content-form'>
+            <FileUploader />
+            <AudioHelper />
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

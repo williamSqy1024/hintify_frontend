@@ -48,7 +48,7 @@ const FileUploader: React.FC = () => {
 
   return (
     <div>
-      <h2>File Uploader</h2>
+      <h2>Please Upload your Files here:</h2>
       <input type="file" onChange={handleFileChange} multiple />
       {isFilesPicked && selectedFiles.length > 0 && (
         <div>
