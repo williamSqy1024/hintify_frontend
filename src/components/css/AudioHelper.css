@@ -1,0 +1,57 @@
+.audio-content-container {
+    display: flex;
+    justify-content: space-between; /* Ensures title and buttons stay in the same row */
+    align-items: center; /* Vertically aligns items */
+    padding: 20px;
+    max-width: 700px;
+    margin: 0 auto; /* Center the container */
+    background: linear-gradient(135deg, #f3f4f6, #e0e7ff);
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    flex-direction: row;
+    gap: 10px;
+}
+
+.title {
+    display: flex;
+    flex: 1;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+    white-space: nowrap; /* Prevents the title from wrapping */
+}
+
+.button-container {
+    flex: 1;
+    display: flex;
+    gap: 10px;
+    flex-shrink: 0; /* Prevents buttons from shrinking */
+}
+
+
+.button {
+    background: linear-gradient(135deg, #6a11cb, #2575fc); /* Gradient Background */
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 8px; /* Rounded corners */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.button:hover {
+    background: linear-gradient(135deg, #2575fc, #6a11cb); /* Reverse gradient on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.button:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}

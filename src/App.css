@@ -1,25 +1,64 @@
 .App {
   text-align: center;
+  padding: 30px;
+  background: linear-gradient(135deg, #f3f4f6, #e0e7ff);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Arial', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App h1 {
+  font-size: 36px;  /* Increased font size */
+  font-weight: 600;  /* Semi-bold */
+  color: #4a4a4a;  /* Slightly darker color for better contrast */
+  margin-bottom: 15px;  /* Increased spacing below */
+  letter-spacing: 1px;  /* Slight letter spacing */
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);  /* Subtle text shadow for depth */
 }
+
+.App p {
+  font-size: 20px;  /* Larger font size */
+  color: #555;  /* Softer color for readability */
+  margin-bottom: 30px;  /* Increased spacing below */
+  line-height: 1.6;  /* Improved line height for better readability */
+  font-weight: 400;  /* Regular weight */
+}
+
 
 .hintify-content-flyout {
-  margin: 6px;
   display: flex;
-  flex-direction: row;
-  flex: 1;
-}
-
-.hintify-content-form {
-  flex: 1;
+  flex-direction: column;  /* Changed from row to column */
+  gap: 20px;
+  max-width: 900px;
+  width: 100%;
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 .hintify-content-display {
-  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  border-radius: 12px;
+  background: rgba(106, 17, 203, 0.05);
+}
+
+.hintify-content-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
   width: 100%;
-  height: 100%;
+}
+
+.hintify-content-conversation {
+  background: rgba(106, 17, 203, 0.1);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.1);
 }

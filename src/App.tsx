@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import FileUploader from './components/FileUploader';
 import AudioHelper from './components/AudioHelper';
+import ConversationContainer from './components/ConversationContainer';
 
 
 import axios from 'axios';
@@ -31,6 +32,9 @@ function App() {
             <FileUploader />
             <AudioHelper />
           </div>
+        </div>
+        <div className='hintify-content-conversation'>
+          <ConversationContainer />
         </div>
       </div>
     </div>

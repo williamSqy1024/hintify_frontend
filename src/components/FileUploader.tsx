@@ -1,4 +1,5 @@
 import React, { useState, ChangeEvent } from 'react';
+import "./css/FileUploader.css";
 
 const FileUploader: React.FC = () => {
   const [selectedFiles, setSelectedFiles] = useState<File[]>([]);
@@ -47,25 +48,28 @@ const FileUploader: React.FC = () => {
   };
 
   return (
-    <div>
-      <h2>Please Upload your Files here:</h2>
-      <input type="file" onChange={handleFileChange} multiple />
-      {isFilesPicked && selectedFiles.length > 0 && (
+    <div className="upload-container">
+    <h2 className="upload-title">Please Upload Your Files Here:</h2>
+    <input type="file" className="file-input" onChange={handleFileChange} multiple />
+    
+    {isFilesPicked && selectedFiles.length > 0 && (
         <div>
-          <h3>Selected Files:</h3>
-          <ul>
-            {selectedFiles.map((file, index) => (
-              <li key={index}>
-                {file.name} ({file.type}, {file.size} bytes)
-              </li>
-            ))}
-          </ul>
+            <h3 className="upload-title">Selected Files:</h3>
+            <ul className="file-list">
+                {selectedFiles.map((file, index) => (
+                    <li key={index}>
+                        {file.name} ({file.type}, {file.size} bytes)
+                    </li>
+                ))}
+            </ul>
         </div>
-      )}
-      <button onClick={handleUpload} disabled={!isFilesPicked}>
+    )}
+
+    <button className="upload-button" onClick={handleUpload} disabled={!isFilesPicked}>
         Upload
-      </button>
-    </div>
+    </button>
+</div>
+
   );
 }
 

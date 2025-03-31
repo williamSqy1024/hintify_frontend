@@ -1,6 +1,8 @@
 import React, { useState, useRef, useEffect } from "react";
-
+import useWebSocketStore from "../redux/WebSocketStore";
+import './css/AudioHelper.css';
 const AudioHelper: React.FC = () => {
+    const { setMessage } = useWebSocketStore();
     const [isStreaming, setIsStreaming] = useState(false);
     const [permissionError, setPermissionError] = useState<string | null>(null);
     const ws = useRef<WebSocket | null>(null);
@@ -53,6 +55,7 @@ const AudioHelper: React.FC = () => {
             if (event.data instanceof Blob) {
                 playReceivedAudio(event.data);
             } else {
+                setMessage(event.data); // ✅ Store message in Zustand
                 console.log("Server message:", event.data);
             }
         };
@@ -196,12 +199,12 @@ const AudioHelper: React.FC = () => {
     };
 
     return (
-        <div style={{ padding: "20px", maxWidth: "600px", margin: "0 auto" }}>
-            <h1>Real-Time Audio Streaming (WAV)</h1>
-            {permissionError && <div style={{ color: "red" }}>{permissionError}</div>}
-            <button onClick={startStreaming} disabled={isStreaming}>Start Streaming</button>
-            <button onClick={stopStreaming} disabled={!isStreaming}>Stop Streaming</button>
-            <audio ref={audioRef} controls autoPlay />
+        <div className="audio-content-container">
+            <div className="title">Hintify</div>
+            <div className="button-container">
+                <button className='button' onClick={startStreaming} disabled={isStreaming}>Start</button>
+                <button className='button' onClick={stopStreaming} disabled={!isStreaming}>Stop</button>
+            </div>
         </div>
     );
 };
